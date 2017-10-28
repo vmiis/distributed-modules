@@ -1,0 +1,66 @@
+<!-- ===== Contact Us ===== -->
+<section id="contact" style='min-height:100%'>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h2 class="section-heading" style="color:#3680C1">Contact Us</h2>
+        <h3 class="section-subheading text-muted">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</h3>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12">
+        <form name="sentMessage" id=myform>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Your Name *" id="name" required>
+                <p class="help-block text-danger"></p>
+              </div>
+              <div class="form-group">
+                <input type="email" class="form-control" placeholder="Your Email *" id="email" required>
+                <p class="help-block text-danger"></p>
+              </div>
+              <div class="form-group">
+                <input type="tel" class="form-control" placeholder="Your Phone *" id="phone" required>
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <textarea class="form-control" placeholder="Your Message *" id="message" required></textarea>
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+            <div class="clearfix"></div>
+            <div class="col-lg-12 text-center">
+              <div id="success"></div>
+              <button type="submit" class="btn btn-primary">Send Message</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+	$('a').on('click',function(){
+		id=window.location.href.split('id=').pop()
+		window.parent.postMessage({sandbox_id:'sandbox'+id,cmd:1},"*")
+	})
+    $('#myform').submit(function(event){
+	    event.preventDefault();
+		id=window.location.href.split('id=').pop()
+        var contact={
+            Name:$('#name').val(),
+            Email:$('#email').val(),
+            Phone:$('#phone').val(),
+            Message:$('#message').val()
+        }
+		window.parent.postMessage({sandbox_id:'sandbox'+id,cmd:2,contact:contact},"*")
+	});
+    $('#vm_top_container').on('res',function(event,res){
+        if(res.ret!=-1){
+             document.getElementById('myform').reset();
+        }
+    })
+</script>

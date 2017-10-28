@@ -1,0 +1,17 @@
+<section class="banner" role="banner" style='min-height:100%'>
+<div class="container">
+  <div class="col-md-10 col-md-offset-1">
+	<div class="banner-text text-center">
+	  <h1>Bootstrap One Page Multi Purpose Template</h1>
+	  <p>Lorem ipsum dolor sit ametcursus magna vel scelerisque Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent commodo cursus magna vel scelerisque nisl consectetur et.nisl consectetur et.</p>
+	  <a class="btn btn-large">Find out more</a> </div>
+	<!-- banner text -->
+  </div>
+</div>
+</section>
+<script>
+ 	$('a').on('click',function(){
+        var id=window.location.href.split('id=').pop().split('&')[0];
+ 		window.parent.postMessage({sandbox_id:'sandbox'+id,module_name:'main_simple-static-content-module'},"*")
+ 	})
+</script>

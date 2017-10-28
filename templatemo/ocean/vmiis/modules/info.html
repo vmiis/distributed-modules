@@ -1,0 +1,112 @@
+<div class="container-fluid">
+
+	<div class="row" id="tm-section-2">
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+
+			<!-- slider -->
+			<section>
+				<div id="tmCarousel" class="carousel slide tm-carousel" data-ride="carousel" data-interval="false"> <!-- If you want to make the carousel auto play, remove data-interval="false" -->
+
+					<ol class="carousel-indicators">
+						<li data-target="#tmCarousel" data-slide-to="0" class="active"></li>
+						<li data-target="#tmCarousel" data-slide-to="1" class=""></li>
+						<li data-target="#tmCarousel" data-slide-to="2" class=""></li>
+					</ol>
+
+					<div class="carousel-inner" role="listbox">
+
+						<div class="carousel-item active">
+							<div class="carousel-content">
+								<div>
+									<h2 class="tm-carousel-item-title">Lorem ipsum dolor sit amet</h2>
+									<p class="tm-carousel-item-text">Praesent ultrices a ante at efficitur. Aliquam eu lacinia nunc. Phasellus lacinia feugiat accumsan.<br>
+									Nulla tempor vel est sit amet tincidunt. Nullam eget lectus ut felis aliquam<br>
+									laoreet eget eu dui. Curabitur in imperdiet lorem.</p>
+								</div>
+							</div>
+						</div>
+
+						<div class="carousel-item">
+							<div class="carousel-content">
+								<div>
+									<h2 class="tm-carousel-item-title">Quisque vel nisi pharetra</h2>
+									<p class="tm-carousel-item-text">Praesent ultrices a ante at efficitur. Aliquam eu lacinia nunc. Phasellus lacinia feugiat accumsan.<br>
+									Nulla tempor vel est sit amet tincidunt. Nullam eget lectus ut felis aliquam<br>
+									laoreet eget eu dui. Curabitur in imperdiet lorem.</p>
+								</div>
+							</div>
+						</div>
+
+						<div class="carousel-item">
+							<div class="carousel-content">
+								<div>
+									<h2 class="tm-carousel-item-title">Pellentesque id sem</h2>
+									<p class="tm-carousel-item-text">Praesent ultrices a ante at efficitur. Aliquam eu lacinia nunc. Phasellus lacinia feugiat accumsan.<br>
+									Nulla tempor vel est sit amet tincidunt. Nullam eget lectus ut felis aliquam<br>
+									laoreet eget eu dui. Curabitur in imperdiet lorem.</p>
+								</div>
+							</div>
+						</div>
+
+					</div>
+
+				</div>
+			</section>
+		</div>
+	</div> <!-- row -->
+
+	<div class="row">
+
+		<section class="tm-2-col-img-text tm-2-col-img-lg-right">
+
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 tm-2-col-img">
+				<img src="img/sun-cloud.jpg" alt="Image" class="img-fluid">
+			</div>
+
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 tm-2-col-text">
+				<h2 class="tm-2-col-text-title">Integer sed dictum lectus</h2>
+				<p class="tm-2-col-text-description">
+
+					Aliquam augue libero, convallis in vulputate vel, sodales sed
+					purus. In non velit in eros bibendum pretium quis eu
+					sapien. Donec sapien risus, hendrerit ut metus dignissim,
+					pellentesque congue erat. Quisque tempor odio libero,
+					non auctor odio suscipit eget.
+				</p>
+				<a class="tm-bordered-btn">Read More</a>
+			</div>
+
+		</section>
+
+	</div> <!-- row -->
+
+	<div class="row">
+
+		<section class="tm-2-col-img-text tm-2-col-img-lg-left">
+
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 tm-2-col-img">
+				<img src="img/mountain.jpg" alt="Image" class="img-fluid">
+			</div>
+
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 tm-2-col-text">
+				<h2 class="tm-2-col-text-title">Integer sed dictum lectus</h2>
+				<p class="tm-2-col-text-description">
+					Aliquam augue libero, convallis in vulputate vel, sodales sed
+					purus. In non velit in eros bibendum pretium quis eu
+					sapien. Donec sapien risus, hendrerit ut metus dignissim,
+					pellentesque congue erat. Quisque tempor odio libero,
+					non auctor odio suscipit eget.
+				</p>
+				<a class="tm-bordered-btn">Read More</a>
+			</div>
+
+		</section>
+
+	</div> <!-- row -->
+</div>
+<script>
+ 	$('a').on('click',function(){
+ 		id=window.location.href.split('id=').pop()
+ 		window.parent.postMessage({sandbox_id:'sandbox'+id,module_name:'main_simple-static-content-module'},"*")
+ 	})
+</script>

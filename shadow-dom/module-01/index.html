@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name='viewport' content='width=device-width, initial-scale=1'>
+		<link rel="stylesheet" href="__MODULE_ROOT_PATH__/css/style.css">
+		<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css'>
+	</head>
+	<body>
+		<div id=root_container>
+			<div class="container-fluid info_div" style='max-width:800px'>
+				<div class="text-center">
+				  <h1>Modular Distributed Web Aplications.</h1>
+			  	  <hr style='border-top:1px solid #f05f40;'></hr>
+			  	  <p>We can build a web application with unlimited number of shared reusable modules distributed on different static web servers around the world and maintained by different people with different skills!</p>
+				  <br>
+			  	  <button onclick="$vm.nav_load_module('main_simple-dynamic-content-module');" class="btn btn-primary">Check a simple dynamic content module</button>
+				  <br><br>
+				  <br><br>
+				</div>
+			</div>
+		</div>
+		<script>
+		</script>
+		<style>
+			#root_container{
+				height:100%;
+				width:100%;
+				overflow: auto;
+
+				background-position: center;
+				background-size: cover;
+				background-image: url("__MODULE_ROOT_PATH__/images/background.jpg");
+			}
+			.info_div{
+				position:relative;
+				height:100%;
+				width:100%;
+				display: flex;
+				align-items: center;
+			    color:#fff;
+				font-family: Verdana,sans-serif;
+			    font-size: 15px;
+			    line-height: 1.5;
+			}
+		</style>
+	</body>
+</html>
