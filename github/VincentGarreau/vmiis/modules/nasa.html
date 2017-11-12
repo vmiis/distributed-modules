@@ -15,7 +15,7 @@
 </div>
 <script>
 	$('#a1').on('click',function(){
-		id=window.location.href.split('id=').pop()
+		id=window.location.href.split('id=').pop().split('&')[0];
 		window.parent.postMessage({sandbox_id:'sandbox'+id,module_name:"panel_002_room-booking_booking_record"},"*")
 	})
 </script>

@@ -36,12 +36,12 @@
 </div>
 <script>
 	$('a').on('click',function(){
-		id=window.location.href.split('id=').pop()
+		id=window.location.href.split('id=').pop().split('&')[0];
 		window.parent.postMessage({sandbox_id:'sandbox'+id,cmd:1},"*")
 	})
     $('#myform').submit(function(event){
 	    event.preventDefault();
-		id=window.location.href.split('id=').pop()
+		id=window.location.href.split('id=').pop().split('&')[0];
         var contact={
             Name:$('#contact_name').val(),
             Email:$('#contact_email').val(),
