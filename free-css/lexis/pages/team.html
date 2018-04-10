@@ -1,0 +1,76 @@
+<section id="teams" class="section teams" style='min-height:100%'>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3 col-sm-6">
+        <div class="person"><img src="images/team-1.jpg" alt="" class="img-responsive">
+          <div class="person-content">
+            <h4>Lisa Brown</h4>
+            <h5 class="role">The Mastermind</h5>
+            <p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. </p>
+          </div>
+          <ul class="social-icons clearfix">
+            <li><a ><span class="fa fa-facebook"></span></a></li>
+            <li><a ><span class="fa fa-twitter"></span></a></li>
+            <li><a ><span class="fa fa-linkedin"></span></a></li>
+            <li><a ><span class="fa fa-google-plus"></span></a></li>
+            <li><a ><span class="fa fa-dribbble"></span></a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-6">
+        <div class="person"> <img src="images/team-2.jpg" alt="" class="img-responsive">
+          <div class="person-content">
+            <h4>Johnathan Deo</h4>
+            <h5 class="role">Creative head</h5>
+            <p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+          </div>
+          <ul class="social-icons clearfix">
+            <li><a class=""><span class="fa fa-facebook"></span></a></li>
+            <li><a class=""><span class="fa fa-twitter"></span></a></li>
+            <li><a class=""><span class="fa fa-linkedin"></span></a></li>
+            <li><a class=""><span class="fa fa-google-plus"></span></a></li>
+            <li><a class=""><span class="fa fa-dribbble"></span></a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-6">
+        <div class="person"> <img src="images/team-3.jpg" alt="" class="img-responsive">
+          <div class="person-content">
+            <h4>Mike collins</h4>
+            <h5 class="role">Technical lead</h5>
+            <p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+          </div>
+          <ul class="social-icons clearfix">
+            <li><a class=""><span class="fa fa-facebook"></span></a></li>
+            <li><a class=""><span class="fa fa-twitter"></span></a></li>
+            <li><a class=""><span class="fa fa-linkedin"></span></a></li>
+            <li><a class=""><span class="fa fa-google-plus"></span></a></li>
+            <li><a class=""><span class="fa fa-dribbble"></span></a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-6">
+        <div class="person"> <img src="images/team-4.jpg" alt="" class="img-responsive">
+          <div class="person-content">
+            <h4>Rita Rose</h4>
+            <h5 class="role">Marketing head</h5>
+            <p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+          </div>
+          <ul class="social-icons clearfix">
+            <li><a class=""><span class="fa fa-facebook"></span></a></li>
+            <li><a class=""><span class="fa fa-twitter"></span></a></li>
+            <li><a class=""><span class="fa fa-linkedin"></span></a></li>
+            <li><a class=""><span class="fa fa-google-plus"></span></a></li>
+            <li><a class=""><span class="fa fa-dribbble"></span></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+    $('a').on('click',function(){
+        id=window.location.href.split('id=').pop().split('&')[0];
+        window.parent.postMessage({sandbox_id:'sandbox'+id,module_name:'portal_myself'},"*")
+    })
+</script>
