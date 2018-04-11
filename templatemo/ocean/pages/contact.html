@@ -1,0 +1,84 @@
+<div class="container-fluid">
+
+	<div class="row tm-section">
+
+		<section class="tm-section-contact">
+
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 text-xs-center">
+
+				<h2 class="tm-section-title">Keep in touch</h2>
+				<p class="tm-section-subtitle">Phasellus lacinia feugiat accumsan. Nulla tempor vel est sit amet tincidunt. Nullam eget lectus ut felis aliquam.</p>
+
+			</div>
+
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-7 col-xl-7">
+				<form id=F__ID class="tm-contact-form">
+					<div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 tm-form-group-left">
+						<input type="text" name="Name" class="form-control" placeholder="Name"  required/>
+					</div>
+					<div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 tm-form-group-right">
+						<input type="email" name="Email" class="form-control" placeholder="Email"  required/>
+					</div>
+					<div class="form-group">
+						<input type="text" name="Subject" class="form-control" placeholder="Subject"  required/>
+					</div>
+					<div class="form-group">
+						<textarea name="Message" class="form-control" rows="6" placeholder="Message" required></textarea>
+					</div>
+
+					<button id=submit__ID type="submit" class="btn tm-bordered-btn pull-xs-right">Submit</button>
+				</form>
+			</div> <!-- col -->
+
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-5 col-xl-5 tm-contact-right">
+				<h3 class="tm-contact-title">Our Address</h3>
+				<p class="tm-contact-info">120-240 aliquam augue libero, convallis in vulputate vel, sodales sed purus, 10880<br>
+					San Francisco, CA, USA
+				</p>
+				<p class="tm-contact-info">
+					Email: <a href="mailto:info@company.com">info@company.com</a><br>
+
+				</p>
+				<p class="tm-contact-info">
+					Phone: <a href="tel:0100100110">010-010-0110</a>
+				</p>
+				<div class="tm-social-icons-container">
+					<a class="tm-social-icon-link"><i class="fa fa-facebook tm-social-icon"></i></a>
+					<a class="tm-social-icon-link"><i class="fa fa-google-plus tm-social-icon"></i></a>
+					<a class="tm-social-icon-link"><i class="fa fa-twitter tm-social-icon"></i></a>
+					<a class="tm-social-icon-link"><i class="fa fa-behance tm-social-icon"></i></a>
+					<a class="tm-social-icon-link"><i class="fa fa-linkedin tm-social-icon"></i></a>
+				</div>
+			</div>
+
+		</section>
+
+	</div>
+</div>
+<script>
+	//--------------------------------------------------------
+	//post contact to parent
+	$('#F__ID').submit(function(event){
+		//--------------------------------------------------------
+		event.preventDefault();
+		$('#submit__ID').hide();
+		var id=window.location.href.split('id=').pop().split('&')[0];
+		var data={};
+	    var a=$('#F__ID').serializeArray();
+	    $.each(a, function () { data[this.name]=this.value || '';});
+		window.parent.postMessage({sandbox_id:'sandbox'+id,cmd:'contact',form_data:data},"*")
+	})
+	//--------------------------------------------------------
+	//ask parent load a module
+	$('a').on('click',function(){
+ 		var id=window.location.href.split('id=').pop().split('&')[0];
+ 		window.parent.postMessage({sandbox_id:'sandbox'+id,module_name:'portal_myself'},"*")
+ 	})
+	//--------------------------------------------------------
+	//message from parent
+	g_message=function(e){
+		$('#F__ID')[0].reset();
+		if(e.data.cmd=='show')	$('#submit__ID').show();
+	}
+	//--------------------------------------------------------
+</script>

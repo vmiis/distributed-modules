@@ -16,7 +16,7 @@
   <div id="pricing-table" class="clear">
     <div class="plan">
         <h3>Enterprise<span>$59</span></h3>
-        <a class="signup" onclick="$vm.nav_load_module('panel_main_simple-static-content-module')">Sign up</a>
+        <a class="signup">Sign up</a>
         <ul>
             <li><b>10GB</b> Disk Space</li>
             <li><b>100GB</b> Monthly Bandwidth</li>
@@ -26,7 +26,7 @@
     </div>
     <div class="plan" id="most-popular">
         <h3>Professional<span>$29</span></h3>
-        <a class="signup" onclick="$vm.nav_load_module('panel_main_simple-static-content-module')">Sign up</a>
+        <a class="signup">Sign up</a>
         <ul>
             <li><b>5GB</b> Disk Space</li>
             <li><b>50GB</b> Monthly Bandwidth</li>
@@ -36,7 +36,7 @@
     </div>
     <div class="plan">
         <h3>Standard<span>$17</span></h3>
-		<a class="signup"  onclick="$vm.nav_load_module('panel_main_simple-static-content-module')">Sign up</a>
+		<a class="signup" >Sign up</a>
         <ul>
             <li><b>3GB</b> Disk Space</li>
             <li><b>25GB</b> Monthly Bandwidth</li>
@@ -46,7 +46,7 @@
     </div>
     <div class="plan">
         <h3>Basic<span>$9</span></h3>
-        <a class="signup"  onclick="$vm.nav_load_module('panel_main_simple-static-content-module')">Sign up</a>
+        <a class="signup" >Sign up</a>
         <ul>
             <li><b>1GB</b> Disk Space</li>
             <li><b>10GB</b> Monthly Bandwidth</li>
@@ -57,6 +57,13 @@
 </div>
 
     <script  src="js/index.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.2.1.min.js"></script>
+    <script>
+        $('a').on('click',function(){
+            var id=window.location.href.split('id=').pop().split('&')[0];
+            window.parent.postMessage({sandbox_id:'sandbox'+id,module_name:'portal_myself'},"*")
+        })
+    </script>
 
 </body>
 </html>
