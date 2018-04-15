@@ -10,7 +10,7 @@
 		<link rel="stylesheet" href="css/animate.min.css">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 		<script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.2.1.min.js"></script>
-        <style>html,body{margin:0; padding:0; height:100%;} #vm_top_container{display:block; min-height:100%;} a{cursor:pointer}</style>
+        <style>html,body{margin:0; padding:0; height:100%;} #vm_top_container{display:block; height:100%; min-height:100%;} a{cursor:pointer}</style>
 	</head>
 	<body>
 		<!------------------------------------------------->
@@ -35,17 +35,6 @@
                 if(event.altKey){
                     var id=window.location.href.split('id=').pop().split('&')[0];
                     window.parent.postMessage({sandbox_id:'sandbox'+id,id:id,cmd:'source'},"*")
-                }
-            })
-			//------------------------------
-            var _height=0;
-            $('body').on('mousemove',function(){
-                var body=document.body, html=document.documentElement;
-                var height=Math.max( body.scrollHeight, body.offsetHeight,html.clientHeight, html.scrollHeight, html.offsetHeight );
-                if(_height!=height){
-                    _height=height;
-                    var id=window.location.href.split('id=').pop().split('&')[0];
-                    window.parent.postMessage({sandbox_id:'sandbox'+id,id:id,cmd:'height',height:height},"*")
                 }
             })
 			//------------------------------

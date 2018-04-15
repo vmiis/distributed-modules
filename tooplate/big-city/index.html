@@ -37,17 +37,6 @@
                 }
             })
 			//------------------------------
-            var _height=0;
-            $('body').on('mousemove',function(){
-                var body=document.body, html=document.documentElement;
-                var height=Math.max( body.scrollHeight, body.offsetHeight,html.clientHeight, html.scrollHeight, html.offsetHeight );
-                if(_height!=height){
-                    _height=height;
-                    var id=window.location.href.split('id=').pop().split('&')[0];
-                    window.parent.postMessage({sandbox_id:'sandbox'+id,id:id,cmd:'height',height:height},"*")
-                }
-            })
-			//------------------------------
 		</script>
 		<!------------------------------------------------->
         <script src="js/tether.min.js"></script>                <!-- http://tether.io/ -->
