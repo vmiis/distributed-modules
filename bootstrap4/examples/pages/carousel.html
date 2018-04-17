@@ -1,4 +1,4 @@
-<div style='position:absolute;z-index:1;color: #fff;'>key Alt+mouse double click" will show the source code of the module and where it is hosted.</div>
+<div style="color:#fff;position:absolute;z-index:1;padding:5px;font-size:10px">key Alt+mouse double click" will show the source code of the module and where it is hosted.</div>
 <div id="demo" class="carousel slide" data-ride="carousel">
 
   <!-- Indicators -->
@@ -23,15 +23,11 @@
     <span class="carousel-control-next-icon"></span>
   </a>
 </div>
+
 <script>
-	$('div.carousel-inner').css('height',600)
+    window.onresize=function(){
+        $('div.carousel-inner').css('height',$('body').height())
+    }
+    $('div.carousel-inner').css('height',$('body').height())
+    $('.carousel').carousel({interval: 3000})
 </script>
-<style>
-	/* Make the image fully responsive */
-	/*
-	.carousel-inner img {
-		width: 100%;
-		height: 100%;
-	}
-	*/
-</style>

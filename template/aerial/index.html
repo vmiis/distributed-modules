@@ -1,0 +1,70 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.3.1.min.js"></script>
+	</head>
+	<body class="loading">
+		<div id="wrapper">
+			<div id="bg"></div>
+			<div id="overlay"></div>
+			<div id="main">
+				<!-- Header -->
+					<header id="header">
+						<h1>Modular Distributed</h1>
+						<p>web application</p>
+						<nav>
+							<ul>
+								<li><a class="fa fa-twitter"><span class="label">Twitter</span></a></li>
+								<li><a class="fa fa-facebook"><span class="label">Facebook</span></a></li>
+								<li><a class="fa fa-dribbble"><span class="label">Dribbble</span></a></li>
+								<li><a class="fa fa-github"><span class="label">Github</span></a></li>
+								<li><a class="fa fa-envelope-o"><span class="label">Email</span></a></li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<span class="copyright">&copy; Your company name.</span>
+					</footer>
+
+			</div>
+		</div>
+		<script>
+			window.onload = function() { document.body.className = ''; }
+			window.ontouchmove = function() { return false; }
+			window.onorientationchange = function() { document.body.scrollTop = 0; }
+		</script>
+		<script>
+			//------------------------------
+			//message from parent, call an overwrited function
+            window.onmessage=function(e){
+				g_message(e);
+            };
+			//------------------------------
+			//ask parent to show source code of this module
+            $('body').on('dblclick',function(){
+                if(event.altKey){
+                    var id=window.location.href.split('id=').pop().split('&')[0];
+                    window.parent.postMessage({sandbox_id:'sandbox'+id,id:id,cmd:'source'},"*")
+                }
+            })
+			//------------------------------
+		</script>
+		<script>
+	   	 $('a').on('click',function(){
+	   		 id=window.location.href.split('id=').pop().split('&')[0];
+	   		 window.parent.postMessage({sandbox_id:'sandbox'+id,module_name:'portal_myself'},"*")
+	   	 })
+	    </script>
+		<style>
+			a{
+				cursor:pointer;
+			}
+		</style>
+	</body>
+</html>
