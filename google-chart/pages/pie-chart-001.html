@@ -1,0 +1,38 @@
+<div style="position:absolute;z-index:1;padding:5px;font-size:11px">key Alt+mouse double click" will show the source code of the module and where it is hosted.</div>
+<div id="chart_div"></div>
+<script>
+    //------------------------------------
+    var report=function(info){
+        var data = google.visualization.arrayToDataTable(info.data);
+        var options = {
+          title: info.title,
+          is3D: true,
+        };
+        var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+    }
+    //------------------------------------
+    var id=window.location.href.split('id=').pop().split('&')[0];
+    //------------------------------------
+    var google_chart=0;
+    google.charts.load('current', {packages: ['corechart', 'bar']});
+    google.charts.setOnLoadCallback(function(){
+        google_chart=1;
+        window.parent.postMessage({sandbox_id:'sandbox'+id,cmd:'info-request',request_id:"pie-001"},"*")
+    });
+    //------------------------------------
+    g_message=function(e){
+        console.log(e.data.cmd)
+        if(e.data.cmd=='show')  window.parent.postMessage({sandbox_id:'sandbox'+id,cmd:'info-request',request_id:"1"},"*")
+        if(e.data.cmd=='report') report(e.data.info)
+    }
+    //------------------------------------
+    $('#chart_div').css('height',$('body').height());
+    window.onresize=function(){  $('#chart_div').css('height',$('body').height()); }
+    //------------------------------------
+</script>
+<style>
+    body{
+        background-color: #fff;
+    }
+</style>
